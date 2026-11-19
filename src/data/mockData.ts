@@ -1,0 +1,117 @@
+import { LaundryBooking, StudentProfile, BASE_PRICE_PER_KG } from '../types';
+
+export const DGU_HOSTELS_AND_PGS = [
+  'DGU Boys Hostel — Block A (Selaqui Campus)',
+  'DGU Boys Hostel — Block B (Selaqui Campus)',
+  'DGU Girls Hostel — Sarojini Block (Selaqui Campus)',
+  'DGU Executive Student Residence',
+  'Shivalik View Student PG (Chakrata Road, Selaqui)',
+  'Doon Valley Scholars PG (Pharma City Road)',
+  'Himalayan Nest Student Living (Raja Road, Selaqui)',
+  'Green Pines Boys & Girls PG (Near DGU Gate 2)',
+  'Other Hostel / PG (Specify in Pickup Address)',
+];
+
+export const PICKUP_TIME_SLOTS = [
+  '08:00 AM – 10:00 AM (Morning Pre-Class Slot)',
+  '12:30 PM – 02:00 PM (Lunch Break Slot)',
+  '05:00 PM – 07:00 PM (Evening Post-Lecture Slot)',
+  '07:30 PM – 09:00 PM (Night Hostel Slot)',
+];
+
+export const DEFAULT_STUDENT_PROFILE: StudentProfile = {
+  studentName: 'Aarav Sharma',
+  studentId: 'DGU-2025-MBA-042',
+  program: 'MBA — Entrepreneurship & Innovation',
+  mobileNumber: '9876543210',
+  email: 'aarav.sharma@dgu.ac.in',
+  hostelOrPgName: 'DGU Boys Hostel — Block A (Selaqui Campus)',
+  pickupAddress: 'Room 304, 3rd Floor, Block A, Near Common Lounge',
+  preferredTimeSlot: '05:00 PM – 07:00 PM (Evening Post-Lecture Slot)',
+  defaultFabricNotes: 'Separate dark jeans from white shirts; mild detergent preferred.',
+};
+
+export const INITIAL_DEMO_ORDERS: LaundryBooking[] = [
+  {
+    id: 'QWC-DEMO-104',
+    studentName: 'Aarav Sharma (Sample Demo)',
+    mobileNumber: '9876543210',
+    hostelOrPgName: 'DGU Boys Hostel — Block A (Selaqui Campus)',
+    pickupAddress: 'Room 304, 3rd Floor, Block A',
+    pickupDate: '2026-09-30',
+    pickupTimeSlot: '05:00 PM – 07:00 PM (Evening Post-Lecture Slot)',
+    estimatedWeightKg: 4.5,
+    confirmedWeightKg: 4.5,
+    pricePerKg: BASE_PRICE_PER_KG,
+    estimatedPrice: 450,
+    finalPrice: 450,
+    specialInstructions: 'Includes 1 navy blazer hoodie and everyday cotton tees. Fold neatly.',
+    status: 'Washing in Progress',
+    createdAt: '2026-09-30 09:15 AM',
+    updatedAt: '2026-09-30 06:20 PM',
+    isDemoOrder: true,
+  },
+  {
+    id: 'QWC-DEMO-103',
+    studentName: 'Priya Nautiyal (Sample Demo)',
+    mobileNumber: '9812345670',
+    hostelOrPgName: 'DGU Girls Hostel — Sarojini Block (Selaqui Campus)',
+    pickupAddress: 'Room 212, 2nd Floor, East Wing',
+    pickupDate: '2026-09-30',
+    pickupTimeSlot: '08:00 AM – 10:00 AM (Morning Pre-Class Slot)',
+    estimatedWeightKg: 3.0,
+    confirmedWeightKg: 3.2,
+    pricePerKg: BASE_PRICE_PER_KG,
+    estimatedPrice: 300,
+    finalPrice: 320,
+    specialInstructions: 'Confirmed 3.2 kg on digital scale at hostel reception.',
+    status: 'Ready for Delivery',
+    createdAt: '2026-09-29 08:40 PM',
+    updatedAt: '2026-09-30 04:10 PM',
+    isDemoOrder: true,
+  },
+  {
+    id: 'QWC-DEMO-102',
+    studentName: 'Rohan Rawat (Sample Demo)',
+    mobileNumber: '9760112233',
+    hostelOrPgName: 'Shivalik View Student PG (Chakrata Road, Selaqui)',
+    pickupAddress: 'Flat 102, Ground Floor, Gate 1',
+    pickupDate: '2026-10-01',
+    pickupTimeSlot: '07:30 PM – 09:00 PM (Night Hostel Slot)',
+    estimatedWeightKg: 5.0,
+    pricePerKg: BASE_PRICE_PER_KG,
+    estimatedPrice: 500,
+    specialInstructions: '2 bedsheets + weekly hostel clothes. Call on arrival at PG gate.',
+    status: 'Pickup Scheduled',
+    createdAt: '2026-09-30 02:30 PM',
+    updatedAt: '2026-09-30 02:45 PM',
+    isDemoOrder: true,
+  },
+  {
+    id: 'QWC-DEMO-101',
+    studentName: 'Ananya Verma (Sample Demo)',
+    mobileNumber: '9412098765',
+    hostelOrPgName: 'Doon Valley Scholars PG (Pharma City Road)',
+    pickupAddress: 'Room 14, 1st Floor',
+    pickupDate: '2026-09-28',
+    pickupTimeSlot: '05:00 PM – 07:00 PM (Evening Post-Lecture Slot)',
+    estimatedWeightKg: 6.0,
+    confirmedWeightKg: 6.0,
+    pricePerKg: BASE_PRICE_PER_KG,
+    estimatedPrice: 600,
+    finalPrice: 600,
+    specialInstructions: 'Standard wash and fold package.',
+    status: 'Delivered',
+    createdAt: '2026-09-28 11:00 AM',
+    updatedAt: '2026-09-29 06:15 PM',
+    isDemoOrder: true,
+  },
+];
+
+export function formatINR(amount: number): string {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  }).format(Math.round(amount));
+}

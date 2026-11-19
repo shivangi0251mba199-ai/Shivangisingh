@@ -1,0 +1,6 @@
+{
+  "name": "QuickWash Campus",
+  "description": "Student-focused laundry pickup, weight confirmation, washing and folding, and doorstep delivery prototype for DBS Global University (DGU), Dehradun.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
